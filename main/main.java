@@ -4,5 +4,6 @@ public class main {
         produto p = new produto("Pastel","pastelaria",10.0);
         lote l = new lote(3,"2022-05-11",p);
         System.out.print(l.toString());
+        System.out.print(p.toString());
     }
 }
