@@ -1,8 +1,8 @@
-public class produto {
+public class produtoService {
     String name;
     String fabricante;
     double preco;
-    public produto(String name, String fab, double preco){
+    public produtoService(String name, String fab, double preco){
         this.name=name;
         this.fabricante=fab;
         this.preco=preco;
@@ -35,7 +35,7 @@ public class produto {
     @Override
     public String toString() {
         return "produto{" +
-                "name='" + name + '\'' +
+                "nomeProduto='" + name + '\'' +
                 ", fabricante='" + fabricante + '\'' +
                 ", preco=" + preco +
                 '}';

@@ -1,16 +1,18 @@
 import java.util.Date;
 
 
-public class lote {
+public class loteService {
     int qtd;
     String dataV;
-    produto prod;
-    public lote(int qtd, String dataV, produto prod ){
+    produtoService prod;
+
+    public loteService(int qtd, String dataV, produtoService prod ){
         this.qtd=qtd;
         this.dataV=dataV;
         this.prod=prod;
 
-     }
+
+    }
 
     public int getQtd() {
         return qtd;
@@ -28,20 +30,20 @@ public class lote {
         this.dataV = dataV;
     }
 
-    public produto getProd() {
+    public produtoService getProd() {
         return prod;
     }
 
-    public void setProd(produto prod) {
+    public void setProd(produtoService prod) {
         this.prod = prod;
     }
 
     @Override
     public String toString() {
         return "lote{" +
-                "qtd=" + qtd +
-                ", dataV='" + dataV + '\'' +
-                ", prod=" + prod +
+                "quantidade=" + qtd +
+                ", dataValidade='" + dataV + '\'' +
+                ", produtos=" + prod +
                 '}';
     }
 }
