@@ -1,21 +1,32 @@
 
+
+
+
+import java.util.List;
+
 public class fachada {
 
-    private static produtoService produto;
-    private static loteService lote;
-    public fachada(){
-        this.produto= new produtoService("Pastel","pastelaria",10.0);
-        this.lote = new loteService(3,"2022-05-11", produto);
-    }
-    public static String criar_produto() {
-        System.out.println(produto.toString());
-        return "Produto Criado";
-    }
-    public static String criar_lote(){
+    private loteService loteService;
+    private produtoService produtoService;
 
-        return "Lote criado";
-
+    public fachada() {
+        this.loteService = new loteService();
+        this.produtoService = new produtoService();
     }
 
+    public Produto salvarProduto(String nome, String fabricante, double valor) {
+        return this.produtoService.salvar(nome, fabricante, valor);
+    }
 
+    public List<Produto> listarProdutos() {
+        return (List<Produto>) this.produtoService.listar();
+    }
+
+    public Lote salvarLote(Produto produto, int quantidade, String data_validade) {
+        return this.loteService.salvar(produto, quantidade, data_validade);
+    }
+
+    public List<Lote> listarLotes() {
+        return this.loteService.listar();
+    }
 }
